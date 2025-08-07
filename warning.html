@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Alert</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: black;
+            color: red;
+        }
+        .alert-popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #1a1a1a;
+            border: 3px solid red;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            animation: blink 1s infinite;
+            max-width: 90%;
+            box-shadow: 0 0 20px red;
+            z-index: 1000;
+        }
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0.7; }
+        }
+        .skull {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+        .alert-text {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        .message {
+            font-size: 14px;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+        .learn-btn {
+            background: red;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .education-content {
+            display: none;
+            background: white;
+            color: black;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 20px;
+            text-align: left;
+        }
+        .safe-tips {
+            background: #e8f5e8;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 5px solid #4CAF50;
+        }
+    </style>
+</head>
+<body>
+    <!-- Alert Popup -->
+    <div class="alert-popup" id="alertPopup">
+        <div class="skull">💀</div>
+        <div class="alert-text">⚠️ YOUR PHONE HAS BEEN HACKED! ⚠️</div>
+        <div class="message">
+            SECURITY BREACH DETECTED!<br>
+            Your personal data is being accessed!<br>
+            Your camera is being monitored!<br>
+            Your location is being tracked!<br><br>
+            <strong>JUST KIDDING! 😄</strong><br>
+            This is educational - but it could have been real!
+        </div>
+        <button class="learn-btn" onclick="showEducation()">LEARN HOW TO STAY SAFE</button>
+    </div>
+
+    <!-- Educational Content -->
+    <div class="education-content" id="educationContent">
+        <h2>🎓 You Just Learned About QR Code Dangers!</h2>
+        
+        <div style="background: #ffebee; padding: 20px; border-radius: 8px; margin: 20px 0;">
+            <h3>⚠️ What Just Happened?</h3>
+            <p>You scanned a QR code and got a scary "HACKED" message. In real attacks, this could have been:</p>
+            <ul>
+                <li>🦠 <strong>Malware</strong> that steals your photos and messages</li>
+                <li>💳 <strong>Fake website</strong> that steals your bank details</li>
+                <li>📱 <strong>Virus</strong> that controls your phone</li>
+                <li>💰 <strong>Scam</strong> that steals your money</li>
+            </ul>
+        </div>
+
+        <div class="safe-tips">
+            <h3>🛡️ How to Stay Safe:</h3>
+            <ul>
+                <li><strong>Don't scan random QR codes</strong> - Only from trusted sources</li>
+                <li><strong>Check URLs first</strong> - Use apps that preview links</li>
+                <li><strong>Be suspicious</strong> - If it seems too good to be true, it is</li>
+                <li><strong>Never enter passwords</strong> - After scanning unknown QR codes</li>
+                <li><strong>Keep phone updated</strong> - Install security updates</li>
+            </ul>
+        </div>
+
+        <div style="text-align: center; margin-top: 30px;">
+            <h3>🎯 Remember: Think Before You Scan!</h3>
+            <button onclick="window.close()" style="background: #4CAF50; color: white; padding: 15px 30px; border: none; border-radius: 5px; cursor: pointer;">
+                Got It! I'll Be Careful
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function showEducation() {
+            document.getElementById('alertPopup').style.display = 'none';
+            document.getElementById('educationContent').style.display = 'block';
+            document.body.style.background = '#f5f5f5';
+        }
+
+        // Auto show education after 6 seconds
+        setTimeout(function() {
+            showEducation();
+        }, 6000);
+    </script>
+</body>
+</body>
+</html>
